@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MedCare Pharma</title>
 <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -32,9 +33,9 @@
 
 <main class="main">
 <header class="topbar">
-  <div class="hamburger">☰</div>
+  <div class="hamburger" aria-label="Toggle menu">☰</div>
   <div class="title"><h1>{% block heading %}Smart Inventory & Replenishment Control Tower{% endblock %}</h1><p>Real-time inventory visibility, AI-powered demand sensing.</p></div>
-  <div class="top-actions"><div class="search">Search medicine, SKU, DC... <b>⌕</b></div><span class="icon">♧</span><span class="icon">☼</span><div class="user"><span>👨‍💼</span><b>Admin User</b><small>Supply Chain Manager</small></div><span>⌄</span></div>
+  <div class="top-actions"><div class="search">Search medicine, SKU, DC... <b>⌕</b></div><span class="icon">♧</span><span class="icon">☼</span><div class="user"><span>👨‍💼</span><b>Admin User</b></div></div>
 </header>
 <div class="content">{% block content %}{% endblock %}</div>
 </main>
