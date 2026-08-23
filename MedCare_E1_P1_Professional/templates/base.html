@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MedCare Pharma</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><div class="logo">✚</div><div><b>MedCare Pharma</b><small>Smart Inventory System</small></div></div>
+  <nav>
+    <div class="nav-label">E1 - INVENTORY MONITORING</div>
+    <a href="/" class="nav-item">⌂ <span>Dashboard</span></a>
+    <a href="/inventory" class="nav-item">▣ <span>Inventory Overview</span></a>
+    <a href="/alerts" class="nav-item">♧ <span>Stock Alerts</span><em>12</em></a>
+    <a href="/inventory" class="nav-item">◷ <span>Expiry Management</span></a>
+    <a href="/replenishment" class="nav-item">↻ <span>Reorder Recommendations</span></a>
+    <a href="/replenishment" class="nav-item">⇄ <span>DC Transfer Planner</span></a>
+    <div class="nav-label">P1 - DEMAND & REPLENISHMENT</div>
+    <a href="/demand" class="nav-item">⌁ <span>Demand Sensing</span></a>
+    <a href="/demand" class="nav-item">⌁ <span>Demand Forecast</span></a>
+    <a href="/replenishment" class="nav-item">▣ <span>Replenishment Planner</span></a>
+    <a href="/replenishment" class="nav-item">◉ <span>What-if Analysis</span></a>
+    <div class="nav-label">ANALYTICS & REPORTS</div>
+    <a href="#" class="nav-item">▥ <span>Reports</span></a>
+    <a href="#" class="nav-item">▥ <span>Performance Dashboard</span></a>
+  </nav>
+  <div class="assistant"><div class="assistant-icon">✦</div><b>AI Assistant</b><p>Ask me anything about inventory, demand or replenishment...</p><button>⌕ Start Chat</button></div>
+</aside>
+
+<main class="main">
+<header class="topbar">
+  <div class="hamburger">☰</div>
+  <div class="title"><h1>{% block heading %}Smart Inventory & Replenishment Control Tower{% endblock %}</h1><p>Real-time inventory visibility, AI-powered demand sensing.</p></div>
+  <div class="top-actions"><div class="search">Search medicine, SKU, DC... <b>⌕</b></div><span class="icon">♧</span><span class="icon">☼</span><div class="user"><span>👨‍💼</span><b>Admin User</b><small>Supply Chain Manager</small></div><span>⌄</span></div>
+</header>
+<div class="content">{% block content %}{% endblock %}</div>
+</main>
+<script src="{{ url_for('static',filename='js/app.js') }}"></script>
+</body>
+</html>

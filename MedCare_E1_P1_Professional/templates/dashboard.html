@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="filterbar"><div class="chips"><span>All Locations</span><span>All Products</span></div><div class="date">▣ 24 May 2025　⌄</div></div>
+<div id="kpis" class="kpis"></div>
+
+<div class="grid two">
+ <div class="card big">
+   <div class="card-head"><h3>Demand Sensing Overview <i>ⓘ</i></h3><span class="pill">Last 7 Days</span></div>
+   <div class="chart-wrap"><canvas id="demandChart"></canvas></div>
+ </div>
+ <div class="card">
+   <div class="card-head"><h3>Demand Signal Sources</h3></div>
+   <div class="donut-wrap"><canvas id="signalChart"></canvas><div class="legend">
+    <p><i class="dot blue"></i>Sales History <b>45%</b></p><p><i class="dot green"></i>Current Orders <b>25%</b></p>
+    <p><i class="dot teal"></i>Seasonality <b>15%</b></p><p><i class="dot orange"></i>Promotions <b>10%</b></p><p><i class="dot purple"></i>Other Signals <b>5%</b></p>
+   </div></div>
+ </div>
+</div>
+
+<div class="callout"><span>Demand for <b>Paracetamol, Vitamin C and Amoxicillin</b> expected to increase in next 7 days.</span><a href="/demand">View Details</a></div>
+
+<div class="grid two">
+ <div class="card">
+  <div class="card-head"><h3>Top Replenishment Recommendations</h3><a href="/replenishment">View All</a></div>
+  <div id="recs"></div>
+ </div>
+ <div>
+  <div class="card"><div class="card-head"><h3>Inventory Risk by Distribution Center</h3><a href="/inventory">View All</a></div><div id="risk"></div></div>
+  <div class="card"><div class="card-head"><h3>Expiring Soon <small>(Next 30 Days)</small></h3><a href="/inventory">View All</a></div><div id="expiry"></div></div>
+ </div>
+</div>
+
+<div class="card"><div class="card-head"><h3>Recent Alerts & Notifications</h3><a href="/alerts">View All</a></div><div id="alerts"></div></div>
+
+<div class="card flow"><h3>Replenishment Flow</h3><div class="flowline">
+ <div><span>⌕</span><b>1. Demand Sensing</b><small>Detect demand changes</small></div><i>→</i>
+ <div><span>▣</span><b>2. Inventory Check</b><small>Check stock & expiry</small></div><i>→</i>
+ <div><span>▤</span><b>3. Plan Replenishment</b><small>Calculate required quantity</small></div><i>→</i>
+ <div><span>▱</span><b>4. Create Shipment</b><small>Generate PO / Transfer</small></div><i>→</i>
+ <div><span>✓</span><b>5. Track & Deliver</b><small>Monitor & receive stock</small></div>
+</div></div>
+{% endblock %}

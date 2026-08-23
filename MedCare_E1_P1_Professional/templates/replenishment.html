@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block heading %}Replenishment Planner{% endblock %}
+{% block content %}
+<div class="page-title"><div><h2>Smart Replenishment Planning</h2><p>Demand + safety stock + current inventory → recommended replenishment.</p></div><button onclick="simulate()">Run +20% Demand Scenario</button></div>
+<div class="card"><div id="plans"></div></div>
+<div class="card" id="scenario"><h3>What-if Analysis</h3><p>Run a scenario to estimate future shortage risk.</p></div>
+{% endblock %}
