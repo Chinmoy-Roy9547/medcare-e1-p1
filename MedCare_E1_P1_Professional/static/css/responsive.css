@@ -1,0 +1,103 @@
+/* ===== RESPONSIVE & COMPACT LAYOUT ADDS ===== */
+
+/* allow smooth sidebar collapse and main reflow */
+.sidebar,
+.main {
+  transition: width 0.28s ease, margin-left 0.28s ease, transform 0.28s ease;
+}
+
+/* make KPIs responsive: fluid card columns */
+.kpis {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+/* better default container width on large screens */
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* compact card look (to mirror the second design) */
+.kpi {
+  padding: 12px;
+  border-radius: 12px;
+}
+.kpi .ico { width: 44px; height: 44px; font-size: 18px; }
+
+/* reduce topbar height for compact view */
+.topbar { height: 62px; padding: 0 20px; }
+
+/* two-column grid: keep desktop layout but allow stacking */
+.grid.two {
+  grid-template-columns: 1.6fr 1fr;
+  gap: 18px;
+}
+
+/* charts: allow them to shrink */
+.chart-wrap { height: 320px; }
+.chart-wrap canvas { width: 100% !important; height: 100% !important; }
+
+/* Sidebar collapsed state (icon-only) */
+.sidebar.collapsed {
+  width: 88px;
+  overflow: visible;
+}
+.sidebar.collapsed .brand > div:not(.logo),
+.sidebar.collapsed .nav-label,
+.sidebar.collapsed .nav-item span,
+.sidebar.collapsed .assistant {
+  display: none;
+}
+.sidebar.collapsed .logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+}
+
+/* Mobile overlay for sidebar */
+.sidebar.mobile-hidden {
+  transform: translateX(-110%);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.sidebar.mobile-open {
+  transform: translateX(0);
+  z-index: 1200;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+/* hamburger: show on small screens */
+.hamburger { display: none; }
+@media (max-width: 1024px) {
+  .hamburger { display: block; }
+}
+
+/* adapt main margin for collapsed sidebar */
+.main { margin-left: 280px; }
+.sidebar.collapsed ~ .main,
+@media (min-width: 1025px) and (max-width: 1400px) {
+  .main { margin-left: 88px; }
+}
+
+/* small / tablet breakpoints: stack grids and cards */
+@media (max-width: 900px) {
+  .main { margin-left: 0; }
+  .sidebar { position: fixed; left: 0; top: 0; height: 100vh; z-index:1200; }
+  .grid.two { grid-template-columns: 1fr; }
+  .grid.three { grid-template-columns: 1fr; }
+  .kpis { gap: 12px; }
+  .card { padding: 14px; }
+  .chart-wrap { height: 220px; }
+  .donut-wrap { flex-direction: row; gap: 10px; }
+  .assistant { display: none; } /* hide large assistant on small screens */
+}
+
+/* very small screens */
+@media (max-width: 480px) {
+  .search { min-width: 140px; padding: 6px 8px; }
+  .title h1 { font-size: 16px; }
+  .topbar { gap: 8px; padding: 0 12px; }
+  .kpi b { font-size: 18px; }
+  .chart-wrap { height: 180px; }
+}
